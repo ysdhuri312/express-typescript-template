@@ -1,9 +1,8 @@
 import { app } from './app';
+import { env } from './configs/env';
 
-const port = 3000;
-
-const server = app.listen(port, () => {
-  console.log(`Server runnning on PORT ${port}`);
+const server = app.listen(env.PORT, () => {
+  console.log(`Server running in ${env.NODE_ENV} mode on port ${env.PORT}`);
 });
 
 let isShuttingDown = false;
@@ -20,7 +19,7 @@ const shutdown = (signal: string, exitCode: number) => {
     }
 
     try {
-      //   await disconnectDB();
+      // await disconnectDB();
     } catch (error) {
       console.error('Failed to disconnect database:', error);
     }
