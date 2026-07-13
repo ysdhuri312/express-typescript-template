@@ -8,6 +8,8 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "types": ["bun"],
+    "esModuleInterop": true,
+    "removeComments": true,
 
     // Bundler mode
     "moduleResolution": "bundler",
@@ -23,8 +25,23 @@
     "noImplicitOverride": true,
 
     // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    // "noPropertyAccessFromIndexSignature": false,
+    // "strictPropertyInitialization": true,
+    // "strictBindCallApply": true,
+    // "forceConsistentCasingInFileNames": true,
+
+    // Build options
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
