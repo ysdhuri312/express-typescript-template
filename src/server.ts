@@ -7,13 +7,15 @@ const server = app.listen(env.PORT, () => {
 
 let isShuttingDown = false;
 const shutdown = (signal: string, exitCode: number) => {
-  if (isShuttingDown) return;
+  if (isShuttingDown) {
+    return;
+  }
 
   isShuttingDown = true;
 
   console.log(`${signal} received. Shutting down gracefully.`);
 
-  server.close(async (error) => {
+  server.close((error) => {
     if (error) {
       console.error('Failed to close HTTP server:', error);
     }
