@@ -10,7 +10,10 @@ export default defineConfig({
   extends: [js.configs.recommended, tseslint.configs.recommendedTypeChecked],
   languageOptions: {
     parserOptions: {
-      projectService: true,
+      projectService: {
+        allowDefaultProject: ['*.js'],
+      },
+      tsconfigRootDir: import.meta.dirname,
     },
   },
   rules: {

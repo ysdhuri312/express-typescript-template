@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
     // Environment setup & latest features
-    "lib": ["ESNext"],
-    "target": "ESNext",
-    "module": "Preserve",
+    "lib": ["ES2022"],
+    "target": "es2022",
+    "module": "nodenext",
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
-    "types": ["bun"],
+    "types": ["node"],
     "esModuleInterop": true,
     "removeComments": true,
 
     // Bundler mode
-    "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
@@ -32,16 +32,12 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": true
     // "noPropertyAccessFromIndexSignature": false,
     // "strictPropertyInitialization": true,
     // "strictBindCallApply": true,
     // "forceConsistentCasingInFileNames": true,
-
-    // Build options
-    "rootDir": "./src",
-    "outDir": "./dist"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
