@@ -1,5 +1,5 @@
-import { app } from './app';
-import { env } from './configs/env';
+import { app } from './app.ts';
+import { env } from './configs/env.ts';
 
 const server = app.listen(env.PORT, () => {
   console.log(`Server running in ${env.NODE_ENV} mode on port ${env.PORT}`);
