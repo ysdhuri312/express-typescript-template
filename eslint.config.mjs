@@ -6,15 +6,15 @@ import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   {
-    files: ['src/**/*.{js,ts}'],
-    ignores: ['dist', 'node_modules'],
+    files: ['src/**/*.ts', 'tests/**/*.ts'],
+    ignores: ['dist/**', 'node_modules/**'],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
     ],
     languageOptions: {
       parserOptions: {
-        projectService: true, //{ allowDefaultProject: ['*.js'] },
+        projectService: true, //
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -40,15 +40,6 @@ export default defineConfig([
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-    },
-  },
-  {
-    files: ['tests/**/*.{js,ts}'],
-    languageOptions: {
-      parserOptions: {
-        project: './tsconfig.test.json',
-        tsconfigRootDir: import.meta.dirname,
-      },
     },
   },
 ]);

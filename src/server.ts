@@ -1,6 +1,6 @@
-import { app } from './app.ts';
-import { connectDB, disconnectDB } from './configs/db.ts';
-import { env } from './configs/env.ts';
+import { app } from './app.js';
+import { connectDB, disconnectDB } from './configs/db.js';
+import { env } from './configs/env.js';
 
 await connectDB();
 const server = app.listen(env.PORT, () => {

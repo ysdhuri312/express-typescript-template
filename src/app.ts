@@ -1,7 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import cors from 'cors';
-import { errorHandler } from './handlers/errorHandler.ts';
-import { AppError } from './handlers/GlobalErrorHandler.ts';
+import { errorHandler } from './handlers/errorHandler.js';
+import { AppError } from './handlers/GlobalErrorHandler.js';
 import cookieParser from 'cookie-parser';
 
 export const app = express();

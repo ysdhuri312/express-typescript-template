@@ -1,5 +1,5 @@
 import { describe, test, expect } from '@jest/globals';
-import { app, sum } from '../src/app.ts';
+import { app, sum } from '../src/app.js';
 import request from 'supertest';
 
 describe('sum module', () => {
