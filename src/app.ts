@@ -1,8 +1,12 @@
 import express, { type Request, type Response } from 'express';
+import cors from 'cors';
 import { errorHandler } from './handlers/errorHandler.ts';
 import { AppError } from './handlers/GlobalErrorHandler.ts';
 
 export const app = express();
+
+// middlewares
+app.use(cors());
 
 export function sum(a: number, b: number) {
   const sum = a + b;
