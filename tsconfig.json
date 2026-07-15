@@ -5,13 +5,11 @@
     "target": "es2022",
     "module": "nodenext",
     "moduleDetection": "force",
-    "jsx": "react-jsx",
     "allowJs": true,
     "types": ["node"],
     "esModuleInterop": true,
     "removeComments": true,
 
-    // Bundler mode
     "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -27,17 +25,8 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
     "noImplicitReturns": true
-    // "noPropertyAccessFromIndexSignature": false,
-    // "strictPropertyInitialization": true,
-    // "strictBindCallApply": true,
-    // "forceConsistentCasingInFileNames": true,
   },
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

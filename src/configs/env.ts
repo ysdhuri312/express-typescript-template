@@ -6,5 +6,5 @@ dotenv.config({
   path: `.env.${enviroment}.local`,
 });
 
-const { PORT, NODE_ENV } = process.env;
-export const env = { PORT, NODE_ENV };
+const { PORT, NODE_ENV, MONGODB_URI } = process.env;
+export const env = { PORT, NODE_ENV, MONGODB_URI };
