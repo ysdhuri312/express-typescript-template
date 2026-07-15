@@ -2,11 +2,15 @@ import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import { errorHandler } from './handlers/errorHandler.ts';
 import { AppError } from './handlers/GlobalErrorHandler.ts';
+import cookieParser from 'cookie-parser';
 
 export const app = express();
 
 // middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(cookieParser());
 
 export function sum(a: number, b: number) {
   const sum = a + b;
