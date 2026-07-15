@@ -1,4 +1,6 @@
 import express, { type Request, type Response } from 'express';
+import { errorHandler } from './handlers/errorHandler.ts';
+import { AppError } from './handlers/GlobalErrorHandler.ts';
 
 export const app = express();
 
@@ -14,3 +16,9 @@ app.get('/', (_req: Request, res: Response) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+app.get('/error', () => {
+  throw new AppError(404, 'Not found');
+});
+
+app.use(errorHandler);

@@ -12,7 +12,6 @@ const shutdown = (signal: string, exitCode: number) => {
   }
 
   isShuttingDown = true;
-
   console.log(`${signal} received. Shutting down gracefully.`);
 
   server.close((error) => {
