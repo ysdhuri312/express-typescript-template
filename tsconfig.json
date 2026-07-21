@@ -5,9 +5,10 @@
     "target": "es2022",
     "module": "nodenext",
     "moduleDetection": "force",
-    "types": ["node", "jest"],
+    "types": ["node"],
     "esModuleInterop": true,
     "removeComments": true,
+    "isolatedModules": true,
 
     "moduleResolution": "nodenext",
     "verbatimModuleSyntax": true,
@@ -25,6 +26,6 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true
   },
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules", "dist"]
 }
