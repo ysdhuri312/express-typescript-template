@@ -1,4 +1,5 @@
-import { describe, expect, test } from 'vitest';
+import { describe, test, expect } from 'vitest';
+
 import { app, sum } from '../src/app.js';
 import request from 'supertest';
 
