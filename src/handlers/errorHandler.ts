@@ -1,5 +1,5 @@
 import type { Response, Request, NextFunction } from 'express';
-import { env } from '../configs/env.ts';
+import { env } from '../configs/env.js';
 import type { AppError } from './GlobalErrorHandler.ts';
 
 export function errorHandler(

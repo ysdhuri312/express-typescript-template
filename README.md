@@ -3,13 +3,13 @@
 To install dependencies:
 
 ```bash
-bun install
+npm install
 ```
 
 To run:
 
 ```bash
-bun run index.ts
+npm run index.ts
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+This project was created using `npm init` . [NPM](https://npm.com) is a fast all-in-one JavaScript runtime.
