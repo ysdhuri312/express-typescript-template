@@ -5,7 +5,7 @@
     "target": "es2022",
     "module": "nodenext",
     "moduleDetection": "force",
-    "types": ["node", "jest"],
+    "types": ["node"],
     "esModuleInterop": true,
     "removeComments": true,
 
