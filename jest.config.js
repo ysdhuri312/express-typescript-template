@@ -13,5 +13,5 @@ export default {
     ],
   },
 
-  testMatch: ['<rootDir>/tests/**/*.test.ts'],
+  testMatch: ['<rootDir>/test/**/*.test.ts'],
 };
