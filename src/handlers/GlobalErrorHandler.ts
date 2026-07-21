@@ -1,20 +1,20 @@
-export class AppError extends Error {
-  statusCode: number;
-  details?: unknown;
+import type { Response, Request, NextFunction } from 'express';
+import { env } from '../configs/env.js';
+import type { AppError } from './CustomErrorHandler.js';
 
-  constructor(statusCode: number, message: string, details?: unknown) {
-    super(message);
+export function globalErrorHandler(
+  err: AppError,
+  _req: Request,
+  res: Response,
+  _next: NextFunction,
+) {
+  err.statusCode = err.statusCode || 500;
+  err.message = err.message || 'Internal Server Error';
 
-    this.name = this.constructor.name;
-    this.statusCode = statusCode;
-    this.details = details;
-
-    Error.captureStackTrace(this, this.constructor);
-  }
-}
-
-export class NotFoundError extends AppError {
-  constructor(message = 'Resource not found') {
-    super(404, message);
-  }
+  res.status(err.statusCode).json({
+    success: false,
+    message: err.message,
+    timestamp: new Date().toISOString(),
+    details: env.NODE_ENV === 'development' ? err.stack : null,
+  });
 }

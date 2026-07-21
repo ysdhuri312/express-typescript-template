@@ -1,7 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import cors from 'cors';
-import { errorHandler } from './handlers/errorHandler.js';
-import { AppError } from './handlers/GlobalErrorHandler.js';
+import { globalErrorHandler } from './handlers/GlobalErrorHandler.js';
+import { AppError } from './handlers/CustomErrorHandler.js';
 import cookieParser from 'cookie-parser';
 
 export const app = express();
@@ -29,4 +29,4 @@ app.get('/error', () => {
   throw new AppError(404, 'Not found');
 });
 
-app.use(errorHandler);
+app.use(globalErrorHandler);
